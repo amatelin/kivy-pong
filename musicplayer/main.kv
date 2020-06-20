@@ -1,0 +1,36 @@
+<MyButton>:
+    on_press:app.changeico()
+
+<songlist>:
+    viewclass:'MyButton'
+    RecycleBoxLayout:
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+
+<Index>:
+    name:'index'
+    MDBoxLayout:
+        id:box
+        orientation:'vertical'
+        MDToolbar:
+            title:'Mplayer'
+            left_action_items:[['menu',lambda x:root.menu()]]
+        
+        Image:
+            id:load
+            source:'image/load.gif'
+            anim_delay:0.04
+            size_hint:0.1,0.1
+            pos_hint:{'center_x':.5}
+        MDBottomAppBar:
+            MDToolbar:
+                id:pp
+                icon:'play-circle'
+                type:'bottom'
+                on_action_button:root.rplay(self.icon)
+        
+
+              
